@@ -31,7 +31,7 @@ std::string Incc::getCode() { return "updateValue(1);";}
 
 std::string Decc::getCode() { return "updateValue(-1);";}
 
-std::string Prnt::getCode() { return "std::cout<<memory[mptr];";}
+std::string Prnt::getCode() { return "std::cout<<(char)memory[mptr];";}
 
 std::string Getc::getCode() { return "getch();";}
 
