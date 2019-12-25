@@ -1,3 +1,3 @@
 project(bf-transpiler)
 
-add_executable(bft src/bft.cpp src/logger.cpp src/parser.cpp)
+add_executable(bfuck src/bft.cpp src/logger.cpp src/parser.cpp)
