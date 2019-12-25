@@ -29,4 +29,6 @@ private:
     unsigned long errors;
 };
 
+static Logger logger;
+
 #endif //BF_TRANSPILER_LOGGER_H
