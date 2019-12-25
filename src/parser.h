@@ -8,6 +8,7 @@
 #include <string>
 #include <map>
 #include <functional>
+#include "logger.h"
 
 class Statement {
 public:
@@ -47,7 +48,7 @@ public:
 
 class Brac : public Statement {
 public:
-    Brac(bool open);
+    explicit Brac(bool open);
     ~Brac() override = default;
     std::string getCode() override;
 
@@ -57,7 +58,7 @@ private:
 
 class Shif : public Statement {
 public:
-    Shif(bool left);
+    explicit Shif(bool left);
     ~Shif() override = default;
     std::string getCode() override;
 private:
@@ -66,9 +67,10 @@ private:
 
 class Parser {
 private:
+    Logger *logger;
     std::map<char, std::function<Statement *()>> actions;
 public:
-    Parser();
+    explicit Parser(Logger *logger);
     ~Parser() = default;
     Statement *parseStatement(char i);
 };

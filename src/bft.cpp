@@ -10,10 +10,11 @@
 #include "bft.h"
 
 int main(int argc, char *argv[]) {
+    Logger logger;
     if (argc == 2) {
         std::ifstream ifstream(argv[1]);
         std::ofstream ofstream("out.cpp");
-        Parser parser;
+        Parser parser(&logger);
         if (ifstream.good()) {
             std::vector<Statement*> statements;
             int i;

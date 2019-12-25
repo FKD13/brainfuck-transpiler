@@ -12,7 +12,7 @@ Shif::Shif(bool left) : left(left) {}
 
 Brac::Brac(bool open) : open(open) {}
 
-Parser::Parser() {
+Parser::Parser(Logger *logger) : logger(logger) {
     actions['+'] = [](){ return new Incc();};
     actions['-'] = [](){ return new Decc();};
     actions['.'] = [](){ return new Prnt();};
@@ -57,6 +57,6 @@ Statement *Parser::parseStatement(char i) {
     }
     std::stringstream ss;
     ss << "Invalid character '" << i << "'";
-    logger.warn(ss.str());
+    logger->warn(ss.str());
     return new Statement();
 }
