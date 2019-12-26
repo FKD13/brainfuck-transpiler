@@ -27,13 +27,11 @@ g++ out.cpp
 Or a one liner:
 
 ```shell script
-./bfuck example/cat.txt && [ "$?" -eq 0 ] && g++ out.cpp && ./a.out
+./bfuck example/cat.txt && g++ out.cpp && ./a.out
 ```
-<br>
 ---
 Feel free to contribute by opening issues or creating PR's.
 
-<br>
 ---
 Enjoy converting your BF code!
 
