@@ -1,6 +1,5 @@
 language: c
-compiler:
-- g++
+compiler: clang
 before_install:
 script:
 - cmake .
