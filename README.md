@@ -1,4 +1,7 @@
+
 # Brainfuck Transpiler
+
+![](https://api.travis-ci.org/FKD13/brainfuck-transpiler.svg?branch=master)
 
 Convert all your brainfuck code to c++ code.
 
