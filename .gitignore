@@ -4,6 +4,7 @@ idea/
 cmake-build-debug/
 CMakeFiles/
 CMakeCache.txt
+CTestTestfile.cmake
 cmake_install.cmake
 Makefile
 bf-transpiler.cbp
