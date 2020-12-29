@@ -27,11 +27,11 @@ Parser::Parser(Logger *logger) : logger(logger) {
 
 std::string Statement::getCode() { return "";}
 
-std::string Incc::getCode() { return "updateValue(1);";}
+std::string Incc::getCode() { return "mem[mptr]++;";}
 
-std::string Decc::getCode() { return "updateValue(-1);";}
+std::string Decc::getCode() { return "mem[mptr]--;";}
 
-std::string Prnt::getCode() { return "std::cout<<(char)memory[mptr];";}
+std::string Prnt::getCode() { return "std::cout<<mem[mptr];";}
 
 std::string Getc::getCode() { return "getch();";}
 
@@ -44,7 +44,7 @@ std::string Shif::getCode() {
 
 std::string Brac::getCode() {
     if (open) {
-        return "while(memory[mptr]!=0){";
+        return "while(mem[mptr]!=0){";
     }
     return "}";
 }
@@ -55,8 +55,8 @@ Statement *Parser::parseStatement(char i) {
     if (actions.count(i) != 0) {
         return actions[i]();
     }
-    std::stringstream ss;
-    ss << "Invalid character '" << i << "'";
-    logger->warn(ss.str());
+    //std::stringstream ss;
+    //ss << "Invalid character '" << i << "'";
+    //logger->warn(ss.str());
     return new Statement();
 }
