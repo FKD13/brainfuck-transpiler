@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ./bfuck "$1"
-g++ out.cpp
+clang++ out.cpp
 
 rm out.cpp
 rm a.out

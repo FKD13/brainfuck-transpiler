@@ -23,14 +23,14 @@ The complete flow looks like this:
 
 ```shell script
 ./bfuck example/cat.txt
-g++ out.cpp
+clang++ out.cpp
 ./a.out
 ```
 
 Or a one liner:
 
 ```shell script
-./bfuck example/cat.txt && g++ out.cpp && ./a.out
+./bfuck example/cat.txt && clang++ out.cpp && ./a.out
 ```
 ---
 Feel free to contribute by opening issues or creating PR's.
