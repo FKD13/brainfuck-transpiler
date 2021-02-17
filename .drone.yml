@@ -1,7 +1,9 @@
 kind: pipeline
 steps:
   - name: compile
-    image: rikorose/gcc-cmake:gcc-10
+    image: alpine:latest
     commands:
+      - apk add build-base
+      - apk add cmake
       - cmake .
       - make
