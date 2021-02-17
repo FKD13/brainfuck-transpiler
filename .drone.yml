@@ -1,0 +1,7 @@
+kind: pipeline
+steps:
+  - name: compile
+    image: rikorose/gcc-cmake:gcc-10
+    commands:
+      - cmake .
+      - make
