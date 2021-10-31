@@ -55,8 +55,5 @@ Statement *Parser::parseStatement(char i) {
     if (actions.count(i) != 0) {
         return actions[i]();
     }
-    //std::stringstream ss;
-    //ss << "Invalid character '" << i << "'";
-    //logger->warn(ss.str());
     return new Statement();
 }
