@@ -31,15 +31,15 @@ std::string Incc::getCode() { return "mem[mptr]++;";}
 
 std::string Decc::getCode() { return "mem[mptr]--;";}
 
-std::string Prnt::getCode() { return "std::cout<<mem[mptr];";}
+std::string Prnt::getCode() { return "putchar((int) mem[mptr]);";}
 
 std::string Getc::getCode() { return "getch();";}
 
 std::string Shif::getCode() {
     if (left) {
-        return "left();";
+        return "mptr--;";
     }
-    return "right();";
+    return "mptr++;";
 }
 
 std::string Brac::getCode() {

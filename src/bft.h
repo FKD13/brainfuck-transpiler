@@ -7,14 +7,13 @@
 #include <functional>
 
 const std::list<std::string> base_begin = {
-    "#include <deque>",
-    "#include <iostream>",
-    "std::deque<char> mem;",
-    "int mptr=0;",
-    "void right(){mptr++;if(mptr>=mem.size()){mem.push_back(0);}}",
-    "void left(){mptr--;if(mptr<0){mptr=0;mem.push_front(0);}}",
-    "void getch(){mem[mptr]=getchar();if(mem[mptr]<0){std::cout<<\"[ABORT] EOF received\"<<std::endl;exit(1);}}",
-    "int main(){mem.push_back(0);"
+        "#include <inttypes.h>",
+        "#include <stdio.h>",
+        "#include <stdlib.h>",
+        "uint8_t mem[65536] = { 0 };",
+        "uint16_t mptr=0;",
+        R"(void getch(){int c = getchar(); if(c<0){printf("[ABORT] EOF received\n");exit(1);}else{mem[mptr]=c;}})",
+        "int main(){"
 };
 
 const std::list<std::string> base_end = {
